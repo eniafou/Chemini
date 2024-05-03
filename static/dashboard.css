@@ -1,0 +1,330 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600');
+
+body {
+    background: #ffffff;
+    font-family: 'Poppins', sans-serif;
+}
+
+h1,h2,h3,h4,h5,h6 {
+    font-weight: 300;
+    line-height: inherit;
+    letter-spacing: -1px;
+  }
+
+  h1 {
+    color: #292929;
+    font-size: 3em;
+    margin-bottom: 30px;
+  }
+
+  h2 {
+    color: #393939;
+    font-size: 2em;
+  }
+
+  h3 {
+    color: #505050;
+    font-size: 1.5em;
+    font-weight: 500;
+    margin-bottom: 0;
+  }
+
+  h4 {
+    color: #696969;
+    font-size: 18px;
+    line-height: normal;
+  }
+
+  p {
+    color: #757575;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 25px;
+  }
+
+  strong {
+    font-weight: 500;
+  }
+
+main {
+    padding: 20px;
+}
+
+/* header styling */
+header {
+    margin-bottom: 20px;
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between; /* or justify-content: space-around; */
+    align-items: center;
+    text-align: center;
+    position: relative; /* Added position relative to enable absolute positioning for the button */
+}
+
+
+.btn-like {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: border-color 0.3s ease-in-out;
+    cursor: pointer;
+    &:hover {
+        background-color: rgb(33, 153, 238); /* Change background to red on hover */
+      }
+}
+
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: border-color 0.3s ease-in-out;
+    &:hover {
+        background-color: rgb(33, 153, 238); /* Change background to red on hover */
+      }
+}
+
+nav {
+    text-align: center; /* Center the navigation bar horizontally */
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+}
+
+nav ul li {
+    margin-left: 15px;
+    display: inline-block;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+}
+
+
+
+
+
+.dashboard-section {
+    margin-bottom: 30px;
+}
+
+
+
+
+
+
+
+.top-row, .bottom-row {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+
+.widget {
+    background: #ffffff;
+    -webkit-box-shadow: 0 1px 30px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 0 1px 30px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 1px 30px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    margin: 1%;
+    padding: 30px;
+    border-radius: 3px;
+    width: 48%;
+    height: 48%;
+    box-sizing: border-box;
+    position: relative;
+}
+
+#section1 .widget{
+    height: 200px;
+    
+}
+
+
+.widget h3 {
+    margin-top: 0;
+    color: #333;
+}
+
+.widget h4 {
+    margin-top: 2px;
+    margin-bottom: 0px;
+  }
+
+
+.truncate-container.expanded {
+    max-height: none;
+}
+
+
+.truncate-container {
+    max-height: 60px;
+    overflow: hidden;
+}
+
+.read-more {
+    float: right; /* Align the button to the right */
+    color: #000000;
+    padding: 5px 10px;
+    text-decoration: none;
+    border: 1px solid #000000; /* Add a border for a clean look */
+    border-radius: 3px;
+    cursor: pointer;
+    transition: color 0.3s ease, border-color 0.3s ease; /* Add a smooth transition effect */
+}
+
+.read-more:hover {
+    color: #ffffff; /* Change text color on hover */
+    background-color: #000000; /* Add background color on hover */
+    border-color: #ffffff; /* Change border color on hover */
+}
+
+
+
+
+/* Existing CSS styles... */
+
+
+
+
+
+
+.metrics-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+
+
+/* new code again */
+#overview .dashboard-section {
+    display: flex;
+    justify-content: space-around; /* Adjust as needed */
+    align-items: center; /* Align items vertically at the center */
+}
+
+#overview .widget {
+    background: #ffffff;
+    -webkit-box-shadow: 0 1px 30px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 0 1px 30px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 1px 30px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    margin: 1% auto;
+    display: flex; /* Use flexbox for columns */
+    justify-content: space-between; /* Create space between columns */
+    width: 80%; /* Adjust the width as needed */
+}
+
+.left-column {
+    width: 48%; /* Adjust the width of the left column */
+}
+
+.right-column {
+    width: 48%; /* Adjust the width of the right column */
+    text-align: center;
+}
+
+.widget h3 {
+    margin-top: 0;
+    color: #333;
+}
+
+.brief-review {
+    margin-top: 20px; /* Adjust spacing between sections */
+}
+
+.brief-review p{
+    margin-top: 20px; /* Adjust spacing between sections */
+}
+
+
+
+.flags-card p {
+    background-color: #000000;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 3px;
+    margin-bottom: 5px;
+    display: inline-block;
+    margin-right: 5px;
+}
+
+    
+    
+
+.score {
+    text-align: center;
+}
+
+.score strong {
+    font-size: 6em; /* Adjust the font size for the score */
+}
+
+#chat-container {
+    align-items: center;
+    border-radius: 5px;
+    width: 80%;
+    padding: 10px;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #f5f5f5;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+#chat-box {
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+#user-input {
+    align-items: center;
+    width: 80%;
+    padding: 10px;
+    border: none;
+    border-bottom: 2px solid #3498db;
+    outline: none;
+    font-size: 14px;
+}
+
+button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #3498db;
+    color: white;
+    font-size: 14px;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+
+.chat-container p {
+    margin: 10px 0;
+}
+
+.chat-container strong {
+    font-weight: bold;
+    color: #3498db;
+}

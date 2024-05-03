@@ -1,0 +1,9 @@
+google-generativeai
+Flask
+numpy
+pandas
+Flask-Caching
+python-dotenv
+openpyxl
+matplotlib
+

@@ -1,0 +1,102 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='dashboard.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='magnific-popup.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='font-awesome.min.css') }}">
+    
+    <script defer src="{{ url_for('static', filename='script.js') }}"></script>
+    <title>Evaluation breakdown</title>
+</head>
+<body>
+
+    <header>
+        <h1>Evaluation breakdown</h1>
+        <a href="{{ url_for('go_back', source=source) }}" class="btn-like">Go Back</a>
+        <nav>
+            <ul>
+                <li><a href="#overview">Overview</a></li>
+                <li><a href="#idea_desc">Idea statement</a></li>
+                <li><a href="#section1">Metrics score</a></li>
+                <li><a href="#chatbot-section">Chat</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="overview" class="dashboard-section">
+            <div class="widget">
+                <div class="left-column">
+                    <h3>Brief Review:</h3>
+                    <div class="brief-review">
+                        <p>{{ data.ovl_eval }}</p>
+                    </div>
+                    {% if data.flags %}
+                        <div class="flags-card">
+                            <p>{{ data.flags }}</p>
+                        </div>
+                    {% endif %}
+                </div>
+                <div class="right-column">
+                    <h3>Score :</h3>
+                    <div class="score">
+                        <strong  style="color: rgb(70, 242, 70);">{{ data.score_total }} </strong><strong>/ 20</strong>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        
+        <section id="idea_desc" class="dashboard-section">
+            <h2>Idea statement</h2>
+            <div class="metrics-container">
+                <div class="widget">
+                    <h3>Problem statement</h3>
+                    <div class="truncate-container">
+                        <p>{{ data.problem }}</p>
+                    </div>
+                    <a href="#" class="read-more">Read more</a>
+                </div>
+                <div class="widget">
+                    <h3>Solution</h3>
+                    <div class="truncate-container">
+                        <p>{{ data.solution }}</p>
+                    </div>
+                    <a href="#" class="read-more">Read more</a>
+                </div>
+            </div>
+        </section>
+
+        
+        <section id="section1" class="dashboard-section">
+            <h2>Metrics score</h2>
+            <div class="metrics-container">
+                {% for metric_data in data.eval_breakdown %}
+                <div class="widget">
+                    <h3>{{ metric_data['metric'] }}</h3>
+                    <strong>Score:</strong> <span  style="color: rgb(16, 64, 16);">{{ metric_data['score'] }}</span> / 20<br>
+                    <strong>Explanation:</strong> {{ metric_data['explanation'] }}<br><br>
+                </div>
+                {% endfor %}
+            </div>
+        </section>
+        <section id="chatbot-section" class="dashboard-section">
+            <h2>Chat</h2>
+            <div id="chat-container">
+                <div id="chat-box"></div>
+                <input type="text" name="user_message" id="user-input" placeholder="Type your message..." autocomplete="off">
+                <button onclick="sendMessage()">Send</button>
+            </div>
+        </section>
+    </main>
+</body>
+
+<script>
+    // Set a global variable to hold the additional data
+    var additionalData = {{ data | tojson | safe }};
+</script>
+</html>

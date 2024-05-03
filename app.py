@@ -393,7 +393,7 @@ Flags: “{additional_data["flags"]}”
 Neutral version of the solution: “{additional_data["Neutral_solution"]}”
 Evaluation breakdown: “{additional_data["eval_breakdown"]}”
 
-Your task now is to chat with the user and answer their question about you evaluation. Be convincing and persuasive. You do not respond as 'User' or pretend to be 'User'. You only respond once as 'Assistant'."""  
+Your task now is to chat with the user and answer their question about you evaluation. Be convincing and persuasive. You do not respond as 'User' or pretend to be 'User'. You only respond once as 'Assistant' (start your answer directly, don't start as **Assistant**:...)."""  
     
     messages = cache.get("messages")
     if messages is None:
